@@ -14,12 +14,12 @@ const getAllOrders = (req, res) => {
 const orderPost = (req, res) => {
 
   const {
-    userId, clientName, table, status, 
+    userId, clienteName, table, status, 
   } = req.body;
 
   dataBase.Order.create({
     userId,
-    clientName,
+    clienteName,
     table,
     status,
     
@@ -44,11 +44,11 @@ const getOrderId = (req, res) => {
 
 const orderPut = (req, res) => {
   const {
-    userId, clientName, table, status,
+    userId, clienteName, table, status,
   } = req.body;
   dataBase.Order.update({
     userId,
-    clientName,
+    clienteName,
     table,
     status,
     
