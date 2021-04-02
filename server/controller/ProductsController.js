@@ -47,17 +47,15 @@ const ProductPost = (req, res) => {
 
 const ProductPut = (req, res) => {
   const {
-    name, price, flavor, complement, image, type, sub_type,
+    name, price, flavor, type, subType,
   } = req.body;
   dataBase.Products.update(
     {
       name,
       price,
       flavor,
-      complement,
-      image,
       type,
-      sub_type,
+      subType,
     },
     { where: { id: req.params.id } },
   )

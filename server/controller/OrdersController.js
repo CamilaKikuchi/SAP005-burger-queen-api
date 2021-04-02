@@ -14,15 +14,15 @@ const getAllOrders = (req, res) => {
 const orderPost = (req, res) => {
 
   const {
-    user_id, client_name, table, status, processedAt,
+    userId, clientName, table, status, 
   } = req.body;
 
   dataBase.Order.create({
-    user_id,
-    client_name,
+    userId,
+    clientName,
     table,
     status,
-    processedAt,
+    
   })
     .then((result) => {
       res.status(201).json(result);
@@ -44,14 +44,14 @@ const getOrderId = (req, res) => {
 
 const orderPut = (req, res) => {
   const {
-    user_id, client_name, table, status, processedAt,
+    userId, clientName, table, status,
   } = req.body;
   dataBase.Order.update({
-    user_id,
-    client_name,
+    userId,
+    clientName,
     table,
     status,
-    processedAt,
+    
   }, { where: { id: req.params.id } })
 
     .then(() => {
