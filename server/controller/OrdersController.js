@@ -1,15 +1,17 @@
 const dataBase = require('../db/models');
 
 const getAllOrders = (req, res) => {
-  
-  dataBase.Order.findAll()
+  dataBase.Orders.findAll()
     .then((result) => {
       res.status(200).json(result);
+      connection.end();
     })
-    .catch(() => res.json({
-      message: 'erro ao processar requisição',
-    }));
+    .catch(() =>
+      res.json({
+        message: "Error",
+      }));
 };
+
 
 const orderPost = (req, res) => {
 
